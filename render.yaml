@@ -1,6 +1,27 @@
 services:
-  - type: worker
+  - type: web
     name: signal-bot
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
+```
+
+---
+
+## Render এ Web Service বানাও
+
+1. Render dashboard → **"New +"** → **"Web Service"** select করো
+2. GitHub repo connect করো
+3. Settings:
+
+| Field | Value |
+|-------|-------|
+| Name | signal-bot |
+| Environment | Python 3 |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `python bot.py` |
+
+4. **Environment Variables** এ:
+```
+Key   → TELEGRAM_TOKEN
+Value → তোমার নতুন token
